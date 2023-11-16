@@ -5,16 +5,16 @@ Written to be installed on Debian 12/Ubuntu 22.04
 # Prepare your system:
 Update
 ```bash
-sudo pacman -Syu
+sudo yay -Syu
 ```
 Install dependencies
 ```bash
-sudo pacman -S git -y
+sudo yay -S git -y
 ```
 
 Install neovim (by building it from source)  
 ```bash
-sudo pacman -S base-devel cmake unzip ninja curl
+sudo yay -S base-devel cmake unzip ninja curl
 ```
 ```bash
 sudo cd /usr/local
@@ -30,11 +30,6 @@ sudo make install
 ```
 Neovim should now be installed on your system
 
-
-Install FiraCode Font (Kind of Nerdfont, required for WebDevIcons)
-```bash
-sudo pacman -S ttf-fira-code
-```
 # Install the config
 Go into the right folder
 ```bash
