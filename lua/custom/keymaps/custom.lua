@@ -1,2 +1,2 @@
 -- Exit to Neotree
-vim.keymap.set('n', <header>ex, vim.cmd.Ex)
+vim.keymap.set('n', '<leader>ex', vim.cmd.Ex)

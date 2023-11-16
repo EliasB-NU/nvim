@@ -24,6 +24,16 @@ require('lazy').setup({
 
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
+    
+    -- Theme 
+    { 
+	"catppuccin/nvim", 
+	name = "catppuccin", 
+	priority = 1000,
+	config = function ()
+		vim.cmd.colorscheme "catppuccin"
+	end,
+    },
 
     -- LSP Configuration & Plugins
     {
@@ -73,6 +83,20 @@ require('lazy').setup({
         build = ':TSUpdate',
     },
 
+  {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+  end,
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+  },
+
     { import = 'custom.plugins' }
 
 }, {})
@@ -111,7 +135,8 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Include Keymaps
-require('lua.custom.keymaps')
+require("lua.custom.keymaps.standart")
+require("lua.custom.keymaps.custom")
 
 -- Highlight on yank 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -191,7 +216,7 @@ vim.defer_fn(function()
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'vimdoc', 'vim', 'bash', 'latex', 'java' },
 
-    auto_install = false,
+    auto_install = true,
 
     highlight = { enable = true },
     indent = { enable = true },

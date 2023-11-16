@@ -1,6 +1,6 @@
 return {
-    'andweeb/presence.nvim'
-    version = '*'
+    'andweeb/presence.nvim',
+    version = '*',
 
     config = function ()
         require("presence").setup({
