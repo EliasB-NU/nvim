@@ -12,25 +12,18 @@ Install dependencies
 sudo yay -S git -y
 ```
 
-Install neovim (by building it from source)  
+Install neovim   
 ```bash
-sudo yay -S base-devel cmake unzip ninja curl
-```
-```bash
-sudo cd /usr/local
-```
-```bash
-sudo git clone https://github.com/neovim/neovim.git
-```
-```bash
-make CMAKE_BUILD_TYPE=Release
-```
-```bash
-sudo make install
+yay -S neovim
 ```
 Neovim should now be installed on your system
 
 # Install the config
+Install dependencies
+```bash
+yay -S npm asciidoc rust 
+```
+
 Go into the right folder
 ```bash
 cd ~/.config/
